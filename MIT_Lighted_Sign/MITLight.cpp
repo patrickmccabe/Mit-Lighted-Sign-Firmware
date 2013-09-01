@@ -16,7 +16,6 @@ void MITLight:: initialize(){
 }
 
 
-
 // A helper method - takes three bytes representing an RGB color and returns a
 // 24 bit color
 uint32_t MITLight:: createColorFromRGB(byte R, byte G, byte B){
@@ -30,16 +29,23 @@ uint32_t MITLight:: createColorFromRGB(byte R, byte G, byte B){
 }
 
 
+// sets the color of an individual pixel
+void MITLight:: setPixel(int pixel, uint32_t color){
+  _LedStrip.setPixelColor(pixel,color)
+}
+
+
+
 // sets the major and minor colors of the MIT Logo
 void MITLight::setMajorAndMinorColors(uint32_t majorColor, uint32_t minorColor) {
   int i;
   
-  for (i=0; i < _LEDStrip.numPixels(); i++) { //iterate through all of the pixels
-    if(i < 12 ||  i>14){                      //if the pixel is a part of the major colors
-      _LEDStrip.setPixelColor(i, majorColor); //set the color of that pixel to the major color
+  for (i=0; i < _LEDStrip.numPixels(); i++) { // iterate through all of the pixels
+    if(i<12 ||  i>14){                        // if the pixel is a part of the major colors
+      _LEDStrip.setPixelColor(i, majorColor); // set the color of that pixel to the major color
     }
-    else{                                     //else if the pixel is a part of the minor colors
-      _LEDStrip.setPixelColor(i, minorColor); //set the color of that pixel to the minor color
+    else{                                     // else if the pixel is a part of the minor colors
+      _LEDStrip.setPixelColor(i, minorColor); // set the color of that pixel to the minor color
     }
   }
   
