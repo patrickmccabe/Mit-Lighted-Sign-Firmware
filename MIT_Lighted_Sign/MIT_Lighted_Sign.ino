@@ -3,11 +3,11 @@
 
 
 
-#define dataPin  3;    // Yellow wire on Adafruit Pixels
-#define clockPin 4;    // Green wire on Adafruit Pixels
+#define dataPin  3    // Yellow wire on Adafruit Pixels
+#define clockPin 4    // Green wire on Adafruit Pixels
 #define lightSensor A0
 
-#define lightSensitive false
+boolean lightSensitive = false;
 
 // Set the first variable to the NUMBER of pixels. 25 = 25 pixels in a row
 Adafruit_WS2801 strip = Adafruit_WS2801(25, dataPin, clockPin);
