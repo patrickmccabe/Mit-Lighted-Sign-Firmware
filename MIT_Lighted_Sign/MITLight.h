@@ -12,6 +12,7 @@ class MITLight{
     void initialize();
     uint32_t createColorFromRGB(byte R, byte G, byte B);
     void setMajorAndMinorColors(uint32_t majorColor, uint32_t minorColor);
+    void colorWipe(uint32_t color, uint8_t wait);
     
   private:
     int _dataPin;

@@ -46,3 +46,17 @@ void MITLight::setMajorAndMinorColors(uint32_t majorColor, uint32_t minorColor) 
   _LEDStrip.show();                           // display the pixels
   
 }
+
+
+// iterates through each pixel, setting them all to the same color
+// with some delay between each pixel
+void MITLight::colorWipe(uint32_t color, uint8_t wait) {
+  int i;
+  
+  for (i=0; i < _LEDStrip.numPixels(); i++) {
+    _LEDStrip.setPixelColor(i, color);
+    _LEDStrip.show();
+    delay(wait);
+  }
+}
+
