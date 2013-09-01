@@ -31,7 +31,14 @@ uint32_t MITLight:: createColorFromRGB(byte R, byte G, byte B){
 
 // sets the color of an individual pixel
 void MITLight:: setPixel(int pixel, uint32_t color){
-  _LedStrip.setPixelColor(pixel,color)
+  _LEDStrip.setPixelColor(pixel,color);
+}
+
+
+
+// updates the LED strip to display the colors that were set by setPixel
+void MITLight:: updateDisplay(){
+  _LEDStrip.show();
 }
 
 
