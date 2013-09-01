@@ -10,6 +10,7 @@ class MITLight{
   public:
     MITLight(int dataPin, int clockPin);
     void initialize();
+    uint32_t createColorFromRGB(byte R, byte G, byte B);
     
   private:
     int _dataPin;
