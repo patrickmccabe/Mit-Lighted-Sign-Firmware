@@ -28,3 +28,21 @@ uint32_t MITLight:: createColorFromRGB(byte R, byte G, byte B){
   color |= B;
   return color;
 }
+
+
+// sets the major and minor colors of the MIT Logo
+void MITLight::setMajorAndMinorColors(uint32_t majorColor, uint32_t minorColor) {
+  int i;
+  
+  for (i=0; i < _LEDStrip.numPixels(); i++) { //iterate through all of the pixels
+    if(i < 12 ||  i>14){                      //if the pixel is a part of the major colors
+      _LEDStrip.setPixelColor(i, majorColor); //set the color of that pixel to the major color
+    }
+    else{                                     //else if the pixel is a part of the minor colors
+      _LEDStrip.setPixelColor(i, minorColor); //set the color of that pixel to the minor color
+    }
+  }
+  
+  _LEDStrip.show();                           // display the pixels
+  
+}
